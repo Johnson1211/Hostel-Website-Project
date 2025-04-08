@@ -1,0 +1,364 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+  <meta charset="UTF-8" /> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" /> 
+  <title>Hostel Website</title> 
+</head> 
+<body> 
+  <header class="header"> 
+    <nav> 
+      <div class="nav__bar"> 
+        <div class="logo">
+          <a href="#home">ForestViewHostel</a>
+        </div>
+        <div class="nav__menu__btn" id="menu-btn"> 
+          <i class="ri-menu-line"></i> 
+        </div> 
+      </div> 
+      <ul class="nav__links" id="nav-links"> 
+        <li><a href="#home">Home</a></li> 
+        <li><a href="#about">About</a></li> 
+        <li><a href="#rooms">Rooms</a></li> 
+        <li><a href="#amenities">Amenities</a></li> 
+        <li><a href="#explore">Explore</a></li> 
+        <li><a href="#contact">Contact</a></li>
+        <li><a href=""></a></li> 
+      </ul> 
+      <a href="booking_form.html" class="btn nav__btn">Book Now</a>
+    </nav> 
+    <div class="section__container header__container" id="home"> 
+      <p>Affordable • Social • Adventurous</p> 
+      <h1>Travel More,<br/>Spend <span>Less</span>.</h1> 
+    </div> 
+  </header> 
+  
+  <section class="section__container booking__container"> 
+    <form action="/" class="booking__form"> 
+      <div class="input__group"> 
+        <span><i class="ri-calendar-2-fill"></i></span> 
+        <div> 
+          <label for="check-in">CHECK-IN</label> 
+          <input type="date" id="check-in" placeholder="Check In" /> 
+        </div> 
+      </div> 
+      <div class="input__group"> 
+        <span><i class="ri-calendar-2-fill"></i></span> 
+        <div> 
+          <label for="check-out">CHECK-OUT</label> 
+          <input type="date" id="check-out" placeholder="Check Out" /> 
+        </div> 
+      </div> 
+      <div class="input__group"> 
+        <span><i class="ri-user-fill"></i></span> 
+        <div> 
+          <label for="guests">NUMBER OF PEOPLE IN A ROOM</label> 
+          <select id="guests">
+            <option value="1">1 Person</option>
+            <option value="2">2 People</option>
+            <option value="3">3 People</option>
+            <option value="4">4 People</option>
+            <option value="5">5 People</option>
+            <option value="6">6 People</option>
+          </select>
+        </div> 
+      </div>
+      <div class="input__group"> 
+        <span><i class="ri-hotel-bed-fill"></i></span> 
+        <div> 
+          <label for="room-type">ROOM TYPE</label> 
+          <select id="room-type">
+            <option value="private">Private Room</option>
+            <option value="female">FemaleS-Only Dorm</option>
+            <option value="men">Mens Only</option>
+            <option value="mixed">Mixed</option>
+          </select>
+        </div> 
+      </div>
+      <div class="input__group input__btn"> 
+        <button class="btn">CHECK AVAILABILITY</button> 
+      </div> 
+    </form> 
+  </section> 
+  
+  <section class="section__container about__container" id="about"> 
+    <div class="about__image"> 
+      <img src="assets/hostelfront.jpg" alt="Hostel common area with travelers socializing" /> 
+    </div> 
+    <div class="about__content"> 
+      <p class="section__subheader">ABOUT US</p> 
+      <h2 class="section__header">Your Home Away From Home</h2> 
+      <p class="section__description"> 
+        ForestView Hostel connects budget-conscious students with high-quality, social hostels worldwide. 
+        Our network of hostels focuses on creating authentic campus experiences, fostering new friendships, 
+        and providing clean, safe accommodations at affordable prices. Forest View Anaa - Your Home of Quality Services😎!
+      </p> 
+      <div class="about__features">
+        <div class="feature">
+          <i class="ri-earth-line"></i>
+          <p>10+ Locations in Ghana</p>
+        </div>
+        <div class="feature">
+          <i class="ri-group-line"></i>
+          <p>Community-Focused</p>
+        </div>
+        <div class="feature">
+          <i class="ri-secure-payment-line"></i>
+          <p>Secure Booking</p>
+        </div>
+      </div>
+      <div class="about__btn"> 
+        <button class="btn">Learn More</button> 
+      </div> 
+    </div> 
+  </section> 
+  
+  <section class="section__container room__container" id="rooms"> 
+    <p class="section__subheader">OUR ROOMS</p> 
+    <h2 class="section__header">Comfortable, Social & Budget-Friendly Options</h2> 
+    <div class="room__grid"> 
+      <div class="room__card"> 
+        <div class="room__card__image"> 
+          <img src="assets/TRY.jpg" alt="Mixed dormitory room with bunk beds" /> 
+          <div class="room__card__icons"> 
+            <span><i class="ri-wifi-line"></i></span> 
+            <span><i class="ri-plug-line"></i></span> 
+            <span><i class="ri-lock-line"></i></span> 
+          </div> 
+        </div> 
+        <div class="room__card__details"> 
+          <h4>4-Bed Mixed Dormitory</h4> 
+          <p>Social atmosphere with individual lockers, reading lights, and power outlets for each bed.</p> 
+          <h5>Starting from <span>GHC3,500/YEAR</span></h5> 
+          <a href="booking_form.html" class="btn">Book Now</a> 
+        </div> 
+      </div> 
+      <div class="room__card"> 
+        <div class="room__card__image"> 
+          <img src="assets/hos2.jpg" alt="Female-only dormitory room" /> 
+          <div class="room__card__icons"> 
+            <span><i class="ri-wifi-line"></i></span> 
+            <span><i class="ri-plug-line"></i></span> 
+            <span><i class="ri-lock-line"></i></span> 
+          </div> 
+        </div> 
+        <div class="room__card__details"> 
+          <h4>6-Bed Female Dormitory</h4> 
+          <p>Women-only space with enhanced privacy features, vanity area, and secure storage.</p> 
+          <h5>Starting from <span>GHC3,900/YEAR</span></h5> 
+          <a href="booking_form.html" class="btn">Book Now</a> 
+        </div> 
+      </div> 
+      <div class="room__card"> 
+        <div class="room__card__image"> 
+          <img src="assets/Lovelies-Hostel12.jpg" alt="Private room with double bed" /> 
+          <div class="room__card__icons"> 
+            <span><i class="ri-wifi-line"></i></span> 
+            <span><i class="ri-plug-line"></i></span> 
+            <span><i class="ri-lock-line"></i></span> 
+          </div> 
+        </div> 
+        <div class="room__card__details"> 
+          <h4>Private Room</h4> 
+          <p>Perfect for couples or Students seeking privacy while enjoying hostel social benefits.</p> 
+          <h5>Starting from <span>GHC5,500/YEAR</span></h5> 
+          <a href="booking_form.html" class="btn">Book Now</a> 
+        </div> 
+      </div> 
+    </div> 
+  </section> 
+  
+  <section class="amenities" id="amenities"> 
+    <div class="section__container amenities__container"> 
+      <div class="amenities__content"> 
+        <p class="section__subheader">AMENITIES</p> 
+        <h2 class="section__header">Everything You Need for a Great Stay</h2> 
+        <ul class="amenities__list"> 
+          <li> 
+            <span><i class="ri-wifi-line"></i></span> 
+            Free High-Speed WiFi
+          </li> 
+          <li> 
+            <span><i class="ri-refrigerator-line"></i></span> 
+            Communal Kitchen
+          </li> 
+          <li> 
+            <span><i class="ri-goblet-line"></i></span> 
+            Onsite Bar & Lounge
+          </li> 
+          <li> 
+            <span><i class="ri-map-2-line"></i></span> 
+            Free Walking Tours
+          </li>
+          <li> 
+            <span><i class="ri-24-hours-line"></i></span> 
+            24-Hour Reception
+          </li>
+          <li> 
+            <span><i class="ri-secure-payment-line"></i></span> 
+            Secure Luggage Storage
+          </li>
+          <li> 
+            <span><i class="ri-computer-line"></i></span> 
+            Co-working Space
+          </li>
+          <li> 
+            <span><i class="ri-game-line"></i></span> 
+            Games & Entertainment
+          </li>
+        </ul> 
+      </div> 
+    </div> 
+  </section> 
+  
+  <section class="section__container banner__container"> 
+    <div class="banner__content"> 
+      <div class="banner__card"> 
+        <h4>10+</h4> 
+        <p>Hostels In Ghana</p> 
+      </div> 
+      <div class="banner__card"> 
+        <h4>1,500+</h4> 
+        <p>Bookings Yearly</p> 
+      </div> 
+      <div class="banner__card"> 
+        <h4>95%</h4> 
+        <p>Satisfied Students</p> 
+      </div> 
+    </div> 
+  </section> 
+  
+  <section class="explore" id="explore"> 
+    <p class="section__subheader">EXPLORE</p> 
+    <h2 class="section__header">Find Your Next Adventure</h2> 
+    <div class="explore__grid">
+      <div class="explore__card">
+        <img src="assets/images.jpg" alt="Kumasi destinations">
+        <div class="explore__overlay">
+          <h3>KNUST CAMPUS</h3>
+          <p>From GHC1,500/YEAR</p>
+          <a href="discover.html" class="btn">Discover</a>
+        
+        </div>
+      </div>
+      <div class="explore__card">
+        <img src="assets/hostelfront.jpg" alt="FIAPRE destinations">
+        <div class="explore__overlay">
+          <h3>UENR CAMPUS</h3>
+          <p>From GHC3,000/YEAR</p>
+          <a href="discover.html" class="btn">Discover</a>
+        </div>
+      </div>
+      <div class="explore__card">
+        <img src="assets/Hostel-town-campus.png" alt="UG destinations">
+        <div class="explore__overlay">
+          <h3>UNIVERSITY OF GHANA</h3>
+          <p>From GHC2,500/YEAR</p>
+          <a href="discover.html" class="btn">Discover</a>
+        </div>
+      </div>
+      <div class="explore__card">
+        <img src="assets/GHT.jpg" alt="Cape Coast destinations">
+        <div class="explore__overlay">
+          <h3>UCC CAMPUS</h3>
+          <p>From GHC5000/YEAR</p>
+          <a href="discover.html" class="btn">Discover</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="community">
+    <div class="section__container community__container">
+      <p class="section__subheader">OUR COMMUNITY</p>
+      <h2 class="section__header">Join Our Global Students' Network</h2>
+      <div class="community__content">
+        <div class="community__image">
+          <img src="assets/gy.avif" alt="Students socializing in hostel common area">
+        </div>
+        <div class="community__text">
+          <p class="section__description">
+            More than just a place to sleep, our hostels are social hubs where students from different departments 
+            connect and share experiences. Join our community events, from campus tours to cooking classes and 
+            pub crawls, designed to help you make lasting friendships on your stay.
+          </p>
+          <div class="community__events">
+            <div class="event">
+              <i class="ri-restaurant-line"></i>
+              <p>Weekly Community Dinners</p>
+            </div>
+            <div class="event">
+              <i class="ri-walk-line"></i>
+              <p>Free Walking Tours</p>
+            </div>
+            <div class="event">
+              <i class="ri-goblet-line"></i>
+              <p>Pub Crawls & Nightlife</p>
+            </div>
+            <div class="event">
+              <i class="ri-film-line"></i>
+              <p>Movie Nights</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <footer class="footer" id="contact"> 
+    <div class="section__container footer__container"> 
+      <div class="footer__col"> 
+        <div class="logo"> 
+          <a href="#home">ForestViewHostel</a>
+        </div> 
+        <p class="section__description"> 
+          Connecting budget students with quality hostels worldwide. Find your perfect bed, 
+          meet fellow student, and create unforgettable memories without breaking the bank.
+        </p> 
+        <a href="booking_form.html" class="btn">Book Now</a> 
+      </div> 
+      <div class="footer__col"> 
+        <h4>QUICK LINKS</h4> 
+        <ul class="footer__links"> 
+          <li><a href="#">Destinations</a></li> 
+          <li><a href="#">Last-Minute Deals</a></li> 
+          <li><a href="#">Hostel Types</a></li> 
+          <li><a href="#">Traveler Reviews</a></li> 
+          <li><a href="#">Travel Guides</a></li> 
+        </ul> 
+      </div> 
+      <div class="footer__col"> 
+        <h4>ATUDENTS RESOURCES</h4> 
+        <ul class="footer__links"> 
+          <li><a href="#">Hostel Safety Tips</a></li> 
+          <li><a href="#">Packing Guides</a></li> 
+          <li><a href="#">Solo Travel Advice</a></li> 
+          <li><a href="#">Budget Travel Hacks</a></li> 
+        </ul> 
+      </div> 
+      <div class="footer__col"> 
+        <h4>CONTACT US</h4> 
+        <ul class="footer__links"> 
+          <li><a href="mailto:hello@backpackerhub.com">hello@forestview.com</a></li>
+          <li><a href="tel:+18001234567">+233 55 880 2783</a></li>
+        </ul> 
+        <div class="footer__socials"> 
+          <a href="#"><i class="ri-facebook-fill"></i></a>
+          <a href="#"><i class="ri-instagram-line"></i></a>
+          <a href="#"><i class="ri-youtube-fill"></i></a>
+          <a href="#"><i class="ri-twitter-fill"></i></a>
+          <a href="#"><i class="ri-tiktok-fill"></i></a>
+        </div> 
+      </div> 
+    </div> 
+    <div class="footer__bar"> 
+      Copyright © 2025 ForestViewHostel Group 3. All rights reserved. 
+    </div> 
+  </footer> 
+  
+  <script src="https://unpkg.com/scrollreveal"></script> 
+  <script src="main.js"></script> 
+</body> 
+</html>

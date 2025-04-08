@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Hostel Name - Discover</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #222222;
+        }
+        
+        /* Header styles */
+        header {
+            background-color: #000b15;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo i {
+            margin-right: 10px;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 2rem;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+        }
+        
+        .nav-links i {
+            margin-right: 5px;
+        }
+        
+        .nav-links a:hover {
+            color: #FF2D35;
+        }
+        
+        .active {
+            border-bottom: 2px solid #FF2D35;
+        }
+        
+        /* Hero section */
+        .hero {
+            height: 60vh;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url('assets/Alparslan Konutları - Minerva Mimarlık - İzmir.jpeg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-content {
+            z-index: 2;
+        }
+        
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero-content p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .floating-elements {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            top: 0;
+            left: 0;
+        }
+        
+        .floating-element {
+            position: absolute;
+            opacity: 0.5;
+            font-size: 24px;
+            color: rgb(255, 255, 255);
+            animation: float 15s linear infinite;
+        }
+        
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.5;
+            }
+            90% {
+                opacity: 0.5;
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        
+        /* Info sections */
+        .info-section {
+            padding: 4rem 0;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .section-header h2 {
+            font-size: 2rem;
+            color: #FF2D35;
+            margin-bottom: 0.5rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-header h2::after {
+            content: "";
+            position: absolute; 
+            left: 25%;
+            bottom: -10px;
+            width: 50%;
+            height: 3px;
+            background-color: #FF2D35;
+            transition: width 0.5s ease;
+        }
+        
+        .section-header:hover h2::after {
+            width: 75%;
+        }
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .info-card {
+            background-color: #f9f9f9;
+            padding: 2rem;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .info-card h3 {
+            margin-bottom: 1rem;
+            color: #FF2D35;
+            display: flex;
+            align-items: center;
+        }
+        
+        .info-card h3 i {
+            margin-right: 10px;
+        }
+        
+        /* Gallery */
+        .gallery {
+            background-color: #f5f5f5;
+            padding: 4rem 0;
+            position: relative;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+        
+        .gallery-item {
+            height: 250px;
+            overflow: hidden;
+            border-radius: 5px;
+            position: relative;
+            cursor: pointer;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .gallery-item::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(52, 152, 219, 0);
+            transition: background 0.3s;
+        }
+        
+        .gallery-item:hover::after {
+            background: rgba(52, 152, 219, 0.2);
+        }
+        
+        .gallery-item-caption {
+            position: absolute;
+            bottom: -50px;
+            left: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 10px;
+            text-align: center;
+            transition: bottom 0.3s;
+            z-index: 2;
+        }
+        
+        .gallery-item:hover .gallery-item-caption {
+            bottom: 0;
+        }
+        
+        /* Features section */
+        .features {
+            padding: 4rem 0;
+            background: linear-gradient(135deg, #f9f9f9 0%, #f5f5f5 100%);
+        }
+        
+        .feature-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+            transition: transform 0.3s;
+        }
+        
+        .feature-item:hover {
+            transform: translateX(10px);
+        }
+        
+        .feature-icon {
+            background-color: #FF2D35;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            flex-shrink: 0;
+            transition: transform 0.3s;
+        }
+        
+        .feature-item:hover .feature-icon {
+            transform: rotate(360deg);
+        }
+        
+        .feature-text h3 {
+            margin-bottom: 0.5rem;
+            color: #2c3e50;
+        }
+        
+        /* CTA section */
+        .cta {
+            background-color: #494949;
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('/api/placeholder/1200/800') center center/cover;
+            opacity: 0.1;
+            z-index: 1;
+        }
+        
+        .cta .container {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .cta h2 {
+            margin-bottom: 1rem;
+            font-size: 2rem;
+        }
+        
+        .cta p {
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: white;
+            color: #3498db;
+            padding: 0.8rem 2rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background-color: rgba(0, 0, 0, 0.1);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.4s, height 0.4s;
+        }
+        
+        .btn:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+        
+        .btn:hover {
+            background-color: #2c3e50;
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #151515;
+            color: white;
+            padding: 2rem 0;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+        
+        .footer-column h3 {
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 30px;
+            height: 2px;
+            background-color: #3498db;
+            transition: width 0.3s;
+        }
+        
+        .footer-column:hover h3::after {
+            width: 50px;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 0.5rem;
+            transition: transform 0.2s;
+        }
+        
+        .footer-column ul li:hover {
+            transform: translateX(5px);
+        }
+        
+        .footer-column a {
+            color: #bdc3c7;
+            text-decoration: none;
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+        }
+        
+        .footer-column a i {
+            margin-right: 8px;
+            font-size: 14px;
+        }
+        
+        .footer-column a:hover {
+            color: #3498db;
+        }
+        
+        .copyright {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #bdc3c7;
+        }
+        
+        /* Animation classes */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Scroll to top button */
+        .scroll-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            background-color: #3498db;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            transition: opacity 0.3s, transform 0.3s;
+            z-index: 100;
+            transform: translateY(20px);
+        }
+        
+        .scroll-top.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .scroll-top:hover {
+            transform: translateY(-5px);
+        }
+        
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .hero {
+                height: 40vh;
+            }
+            
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            
+            .nav-links {
+                display: none; /* In a real website, you'd add a mobile menu */
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+                color: white;
+                font-size: 1.5rem;
+                cursor: pointer;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Scroll to top button -->
+    <div class="scroll-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- Header with navigation -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <i class="fas fa-home"></i>
+                    Forest View Hostel
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html"><i class="fas fa-house"></i> Home</a></li>
+                    <li><a href="index.html"><i class="fas fa-bed"></i> Rooms</a></li>
+                    <li><a href="discover.html" class="active"><i class="fas fa-compass"></i> Discover</a></li>
+                    <li><a href="booking_form.html"><i class="fas fa-calendar-check"></i> Book Now</a></li>
+                    <li><a href="#"><i class="fas fa-envelope"></i> Contact</a></li>
+                </ul>
+                <div class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Hero section -->
+    <section class="hero">
+        <div class="floating-elements">
+            <i class="fas fa-compass floating-element" style="top: 15%; left: 20%; animation-duration: 20s; animation-delay: 0s;"></i>
+            <i class="fas fa-map-marker-alt floating-element" style="top: 35%; left: 80%; animation-duration: 15s; animation-delay: 2s;"></i>
+            <i class="fas fa-globe-americas floating-element" style="top: 55%; left: 10%; animation-duration: 18s; animation-delay: 5s;"></i>
+            <i class="fas fa-camera floating-element" style="top: 25%; left: 60%; animation-duration: 22s; animation-delay: 3s;"></i>
+            <i class="fas fa-plane floating-element" style="top: 65%; left: 85%; animation-duration: 17s; animation-delay: 1s;"></i>
+            <i class="fas fa-mountain floating-element" style="top: 75%; left: 30%; animation-duration: 19s; animation-delay: 4s;"></i>
+        </div>
+        <div class="hero-content animate__animated animate__fadeIn">
+            <h1>Discover Our Hostel</h1>
+            <p>Learn about our unique facilities, local attractions, and the experience that awaits you.</p>
+        </div>
+    </section>
+    
+    <!-- About the hostel section -->
+    <section class="info-section">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>About Our Hostel</h2>
+            </div>
+            <div class="info-grid">
+                <div class="info-card fade-in">
+                    <h3><i class="fas fa-book-open"></i> Our Story</h3>
+                    <p>Founded in 2015, our hostel began with a simple vision: create a space where travelers could feel at home while exploring our beautiful city. What started as a small 10-bed facility has grown into the vibrant community hub you see today.</p>
+                </div>
+                <div class="info-card fade-in">
+                    <h3><i class="fas fa-hands-helping"></i> Our Philosophy</h3>
+                    <p>We believe traveling is about making connections - with places, cultures, and most importantly, people. Our hostel is designed to facilitate these connections through communal spaces, group activities, and an atmosphere of openness.</p>
+                </div>
+                <div class="info-card fade-in">
+                    <h3><i class="fas fa-leaf"></i> Sustainability</h3>
+                    <p>We're committed to sustainable tourism. Our hostel operates on renewable energy, employs water conservation measures, uses eco-friendly cleaning products, and supports local businesses to minimize our environmental footprint.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Gallery section -->
+    <section class="gallery">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Forest View Hostel Gallery</h2>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item fade-in">
+                    <img src="assets/uy.jpg" alt="Common area with comfortable seating">
+                    <div class="gallery-item-caption">Common Area</div>
+                </div>
+                <div class="gallery-item fade-in">
+                    <img src="assets/bunk-bed-safety-masthead.jpg" alt="Dormitory room with bunk beds">
+                    <div class="gallery-item-caption">Dormitory Room</div>
+                </div>
+                <div class="gallery-item fade-in">
+                    <img src="assets/kitchen.jpg" alt="Cozy kitchen space">
+                    <div class="gallery-item-caption">Kitchen</div>
+                </div>
+                <div class="gallery-item fade-in">
+                    <img src="assets/outdoor.jpg" alt="Outdoor terrace">
+                    <div class="gallery-item-caption">Outdoor Terrace</div>
+                </div>
+                <div class="gallery-item fade-in">
+                    <img src="assets/SB_gennadi_web-size_61.jpg" alt="Private double room">
+                    <div class="gallery-item-caption">Private Room</div>
+                </div>
+                <div class="gallery-item fade-in">
+                    <img src="assets/Modern bathroom facilities.jpg" alt="Modern bathroom facilities">
+                    <div class="gallery-item-caption">Bathroom</div>
+                </div>
+                <div class="gallery-item fade-in">
+                    <img src="assets/Rooftop view.jpg" alt="Rooftop view">
+                    <div class="gallery-item-caption">Rooftop View</div>
+                </div>
+                <div class="gallery-item fade-in">
+                    <img src="assets/Breakfastarea.jpg" alt="Breakfast area">
+                    <div class="gallery-item-caption">Breakfast Area</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Features section -->
+    <section class="features">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Hostel Features</h2>
+            </div>
+            <div class="feature-list">
+                <div class="feature-column">
+                    <div class="feature-item fade-in">
+                        <div class="feature-icon">
+                            <i class="fas fa-wifi"></i>
+                        </div>
+                        <div class="feature-text">
+                            <h3>Free High-Speed WiFi</h3>
+                            <p>Stay connected with our reliable and fast internet connection available throughout the hostel.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item fade-in">
+                        <div class="feature-icon">
+                            <i class="fas fa-utensils"></i>
+                        </div>
+                        <div class="feature-text">
+                            <h3>Fully Equipped Kitchen</h3>
+                            <p>Cook your own meals in our spacious kitchen with all the appliances and utensils you need.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="feature-column">
+                    <div class="feature-item fade-in">
+                        <div class="feature-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="feature-text">
+                            <h3>24/7 Reception</h3>
+                            <p>Our friendly staff is always available to help you with any questions or needs.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item fade-in">
+                        <div class="feature-icon">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <div class="feature-text">
+                            <h3>Security Lockers</h3>
+                            <p>Keep your valuables safe in our secure personal lockers provided in each room.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="feature-column">
+                    <div class="feature-item fade-in">
+                        <div class="feature-icon">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        <div class="feature-text">
+                            <h3>Daily Events</h3>
+                            <p>Join our walking tours, cooking classes, game nights, and other social activities.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item fade-in">
+                        <div class="feature-icon">
+                            <i class="fas fa-couch"></i>
+                        </div>
+                        <div class="feature-text">
+                            <h3>Communal Spaces</h3>
+                            <p>Relax and socialize in our comfortable common areas, rooftop terrace, and chill-out zones.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Local attractions section -->
+    <section class="info-section">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Local Attractions</h2>
+            </div>
+            <div class="info-grid">
+                <div class="info-card fade-in">
+                    <h3><i class="fas fa-landmark"></i> City Center</h3>
+                    <p>Just a 10-minute walk from our hostel, you'll find the historic city center with its charming squares, markets, and architectural wonders.</p>
+                </div>
+                <div class="info-card fade-in">
+                    <h3><i class="fas fa-umbrella-beach"></i> Beach Access</h3>
+                    <p>A short 15-minute bus ride takes you to our beautiful beaches, perfect for swimming, sunbathing, or enjoying water sports.</p>
+                </div>
+                <div class="info-card fade-in">
+                    <h3><i class="fas fa-hiking"></i> Hiking Trails</h3>
+                    <p>Nature lovers can explore the nearby hills and forests through well-marked hiking trails with stunning panoramic views.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA section -->
+    <section class="cta">
+        <div class="container">
+            <h2 class="animate__animated animate__pulse animate__infinite animate__slower">Ready to Experience Our Hostel?</h2>
+            <p>Book your stay now and become part of our international community of travelers. We offer competitive rates and a memorable experience you won't find anywhere else.</p>
+            <a href="booking_form.html" class="btn animate__animated animate__bounce animate__delay-1s">Book Your Stay</a>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column fade-in">
+                    <h3>Forest View Hostel</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Traveler Street<br>City, Country 12345<br><i class="fas fa-envelope"></i> info@yourhostel.com<br><i class="fas fa-phone"></i> +1 234 567 8910</p>
+                </div>
+                <div class="footer-column fade-in">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Rooms</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Discover</a></li>
+                        <li><a href="booking_form.html"><i class="fas fa-chevron-right"></i> Book Now</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column fade-in">
+                    <h3>Useful Info</h3>
+                    <ul>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> FAQs</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Hostel Policies</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> How to Get Here</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Local Transportation</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column fade-in">
+                    <h3>Follow Us</h3>
+                    <ul>
+                        <li><a href="#"><i class="fab fa-facebook"></i> Facebook</a></li>
+                        <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+                        <li><a href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
+                        <li><a href="#"><i class="fab fa-tripadvisor"></i> TripAdvisor</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; Copyright © 2025 ForestViewHostel Group 3. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Scroll to top button visibility
+            $(window).scroll(function() {
+                if ($(this).scrollTop() > 300) {
+                    $('.scroll-top').addClass('visible');
+                } else {
+                    $('.scroll-top').removeClass('visible');
+                }
+            });
+            
+            // Scroll to top functionality
+            $('.scroll-top').click(function() {
+                $('html, body').animate({scrollTop: 0}, 500);
+                return false;
+            });
+            
+            // Fade in elements on scroll
+            checkFadeElements();
+            $(window).scroll(function() {
+                checkFadeElements();
+            });
+            
+            function checkFadeElements() {
+                $('.fade-in').each(function() {
+                    var bottom_of_element = $(this).offset().top + $(this).outerHeight() / 3;
+                    var bottom_of_window = $(window).scrollTop() + $(window).height();
+                    
+                    if (bottom_of_window > bottom_of_element) {
+                        $(this).addClass('visible');
+                    }
+                });
+            }
+            
+            // Add floating icons to hero section
+            for (let i = 0; i < 5; i++) {
+                setTimeout(function() {
+                    addFloatingIcon();
+                }, i * 3000);
+            }
+            
+            function addFloatingIcon() {
+                var icons = ['fas fa-compass', 'fas fa-map-marker-alt', 'fas fa-globe-americas', 
+                           'fas fa-camera', 'fas fa-plane', 'fas fa-mountain', 'fas fa-suitcase'];
+                var randomIcon = icons[Math.floor(Math.random() * icons.length)];
+                var randomLeft = Math.floor(Math.random() * 90) + 5; // 5-95%
+                var randomDuration = Math.floor(Math.random() * 10) + 15; // 15-25s
+                
+                var icon = $('<i class="' + randomIcon + ' floating-element"></i>').css({
+                    'left': randomLeft + '%',
+                    'top': '120%',
+                    'animation-duration': randomDuration + 's'
+                });
+                
+                $('.floating-elements').append(icon);
+                
+                // Remove icon after animation completes
+                setTimeout(function() {
+                    icon.remove();
+                    // Add a new icon when one is removed
+                    addFloatingIcon();
+                }, randomDuration * 1000);
+            }
+            
+            // Mobile menu toggle
+            $('.mobile-menu-btn').click(function() {
+                $('.nav-links').slideToggle(300);
+            });
+            
+            // Gallery image lightbox effect
+            $('.gallery-item').click(function() {
+                var imgSrc = $(this).find('img').attr('src');
+                var caption = $(this).find('.gallery-item-caption').text();
+                
+                // Create lightbox elements
+                var lightbox = $('<div class="lightbox"></div>').css({
+                    'position': 'fixed',
+                    'top': 0,
+                    'left': 0,
+                    'width': '100%',
+                    'height': '100%',
+                    'background-color': 'rgba(0,0,0,0.9)',
+                    'z-index': 1000,
+                    'display': 'flex',
+                    'align-items': 'center',
+                    'justify-content': 'center',
+                    'flex-direction': 'column',
+                    'opacity': 0,
+                    'transition': 'opacity 0.3s'
+                });
+                
+                var lightboxImg = $('<img>').attr('src', imgSrc).css({
+                    'max-width': '90%',
+                    'max-height': '80%',
+                    'border': '3px solid white'
+                });
+                
+                var lightboxCaption = $('<div></div>').text(caption).css({
+                    'color': 'white',
+                    'margin-top': '20px',
+                    'font-size': '18px'
+                });
+                
+                var closeBtn = $('<div>&times;</div>').css({
+                    'position': 'absolute',
+                    'top': '20px',
+                    'right': '30px',
+                    'color': 'white',
+                    'font-size': '30px',
+                    'cursor': 'pointer'
+                });
+                
+                // Append elements and show lightbox
+                lightbox.append(lightboxImg, lightboxCaption, closeBtn);
+                $('body').append(lightbox);
+                
+                // Prevent scrolling when lightbox is open
+                $('body').css('overflow', 'hidden');
+                
+                // Fade in
+                setTimeout(function() {
+                    lightbox.css('opacity', 1);
+                }, 10);
+                
+                // Close lightbox on click
+                lightbox.click(function() {
+                    $(this).css('opacity', 0);
+                    setTimeout(function() {
+                        lightbox.remove();
+                        $('body').css('overflow', 'auto');
+                    }, 300);
+                });
+            });
+            
+            // Form validation for contact form if exists
+            if ($('#contact-form').length) {
+                $('#contact-form').submit(function(e) {
+                    var isValid = true;
+                    
+                    // Validate required fields
+                    $(this).find('[required]').each(function() {
+                        if ($(this).val() === '') {
+                            $(this).addClass('error');
+                            isValid = false;
+                        } else {
+                            $(this).removeClass('error');
+                        }
+                    });
+                    
+                    // Validate email format
+                    var emailField = $(this).find('input[type="email"]');
+                    if (emailField.length && emailField.val()) {
+                        var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                        if (!emailPattern.test(emailField.val())) {
+                            emailField.addClass('error');
+                            isValid = false;
+                        }
+                    }
+                    
+                    if (!isValid) {
+                        e.preventDefault();
+                        // Show error message
+                        $('.form-error').fadeIn();
+                        
+                        // Scroll to first error
+                        $('html, body').animate({
+                            scrollTop: $('.error:first').offset().top - 100
+                        }, 500);
+                    }
+                });
+            }
+            
+            // Initialize testimonials slider if exists
+            if ($('.testimonials-slider').length) {
+                var currentSlide = 0;
+                var slides = $('.testimonial-item');
+                var totalSlides = slides.length;
+                
+                function showSlide(index) {
+                    slides.removeClass('active');
+                    slides.eq(index).addClass('active');
+                    
+                    // Update indicators
+                    $('.slider-indicator').removeClass('active');
+                    $('.slider-indicator').eq(index).addClass('active');
+                }
+                
+                function nextSlide() {
+                    currentSlide = (currentSlide + 1) % totalSlides;
+                    showSlide(currentSlide);
+                }
+                
+                // Create slider indicators
+                var indicators = $('<div class="slider-indicators"></div>');
+                for (var i = 0; i < totalSlides; i++) {
+                    indicators.append('<span class="slider-indicator"></span>');
+                }
+                $('.testimonials-slider').append(indicators);
+                
+                // Show first slide
+                showSlide(0);
+                
+                // Auto slide every 5 seconds
+                setInterval(nextSlide, 5000);
+                
+                // Click on indicators
+                $('.slider-indicator').click(function() {
+                    currentSlide = $(this).index();
+                    showSlide(currentSlide);
+                });
+            }
+        });
+    </script>
+</body>
+</html>
